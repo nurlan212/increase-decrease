@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import { decrease_counter, fetch_counter, fetch_counter_post, increase_counter, add_value, subtract_value } from '../../store/actions';
+import Preloader from '../UI/Preloader/Preloader';
 
 const Counter = () => {
   const counter = useSelector(state => state.counter);
+  const isLoading = useSelector(state => state.isLoading);
   const dispatch = useDispatch();
   const VALUE = 20;
 
@@ -33,6 +35,7 @@ const Counter = () => {
   
   return (
     <>
+      {isLoading ? <Preloader /> : null}
       <h1>{counter}</h1>
       <button onClick = {increase}>Increase</button>
       <button onClick = {decrease}>Decrease</button>
