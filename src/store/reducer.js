@@ -1,4 +1,4 @@
-import {FETCH_COUNTER_REQUEST, FETCH_COUNTER_SUCCESS, FETCH_COUNTER_ERROR, INCREASE_COUNTER, DECREASE_COUNTER} from './actionTypes';
+import {FETCH_COUNTER_REQUEST, FETCH_COUNTER_SUCCESS, FETCH_COUNTER_ERROR, INCREASE_COUNTER, DECREASE_COUNTER, ADD, SUBTRACT} from './actionTypes';
 
 const initialState = {
   counter: 3,
@@ -17,12 +17,19 @@ const reducer = (state = initialState, action) => {
     case INCREASE_COUNTER:
       return {...state, counter: state.counter + 1};
     case DECREASE_COUNTER:
-      let prevCounter = state.counter;
-      if(prevCounter > 0) {
-        return {...state, counter: prevCounter - 1};
+      if(state.counter > 0) {
+        return {...state, counter: state.counter - 1};
       } else {
         return state;
       }
+    case ADD:
+      return {...state, counter: state.counter + action.value};
+    case SUBTRACT:
+      if(state.counter >= action.value) {
+        return {...state, counter: state.counter - action.value};
+      } else {
+        return state;
+      }      
     default:
       return state;
   }  

@@ -1,4 +1,4 @@
-import { FETCH_COUNTER_REQUEST, FETCH_COUNTER_SUCCESS, FETCH_COUNTER_ERROR, INCREASE_COUNTER, DECREASE_COUNTER } from './actionTypes';
+import { FETCH_COUNTER_REQUEST, FETCH_COUNTER_SUCCESS, FETCH_COUNTER_ERROR, INCREASE_COUNTER, DECREASE_COUNTER, ADD, SUBTRACT } from './actionTypes';
 import axios_counter from '../axios-counter';
 import axios from 'axios';
 
@@ -7,6 +7,12 @@ export const increase_counter = () => {
 };
 export const decrease_counter = () => {
   return {type: DECREASE_COUNTER};
+};
+export const add_value = (value) => {
+  return {type: ADD, value};
+};
+export const subtract_value = (value) => {
+  return {type: SUBTRACT, value};
 };
 const fetch_counter_request = () => {
   return {type: FETCH_COUNTER_REQUEST};
