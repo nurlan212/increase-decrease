@@ -5,3 +5,4 @@ export const INCREASE_COUNTER = 'INCREASE_COUNTER';
 export const DECREASE_COUNTER = 'DECREASE_COUNTER';
 export const ADD = 'ADD';
 export const SUBTRACT = 'SUBTRACT';
+export const CLOSE_MODAL = 'CLOSE_MODAL';

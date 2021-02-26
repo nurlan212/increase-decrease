@@ -1,0 +1,64 @@
+.Modal__backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0, 0.5);
+  opacity: 0.5;
+  z-index: 1000;
+}
+    
+.Modal__window {
+  padding: 5px 10px 10px;
+  width: 400px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1010;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 0 10px #000;
+  border-radius: 4px;
+}
+
+.Modal__window__btn {
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid rgba(0,0,0, 0.5);
+}
+  
+.Modal__window__btn:focus{
+  outline: none;
+}      
+    
+.Modal__window__btn-close {
+  padding: 3px 8px;
+  background-color: #FF0000;
+}
+.Modal__window__btn-close:hover {
+  background-color: #E20338;
+}
+      
+.Modal__window__btn-ok {
+  align-self: center;
+  padding: 3px 20px;  
+  background-color: #efefef;  
+}
+        
+.Modal__window__btn-ok:hover {
+  background-color: darken(#efefef, 10%);
+}
+            
+.Modal__window__header {
+  text-align: end;
+}
+               
+.Modal__window__text {
+  margin: 20px 0;
+  font-size: 13px;
+}
+  
+    
